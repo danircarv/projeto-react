@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function Detalhes() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [filme, setFilme] = useState(null);
 
   useEffect(() => {
@@ -19,6 +20,7 @@ export default function Detalhes() {
 
   return (
     <div className="detalhes">
+      <button onClick={() => navigate(-1)}>Voltar</button>
       <h1>{filme.title}</h1>
       <p className="generos">
         Gêneros: {filme.genres.map((genero) => genero.name).join(", ")}
