@@ -17,6 +17,8 @@ export default function Favoritos() {
     <div>
       <h1>Favoritos</h1>
 
+      {favoritos.length === 0 && <p>Você não tem filmes favoritos.</p>}
+
       {favoritos.map((filme) => (
         <MovieCard
           key={filme.id}

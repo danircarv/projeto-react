@@ -14,7 +14,7 @@ export default function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/sobre" element={<Detalhes />} />
+          {/* <Route path="/sobre" element={<Detalhes />} /> */}
           <Route path="/filme/:id" element={<Detalhes />} />
           <Route path="/busca" element={<Busca />} />
           <Route path="/favoritos" element={<Favoritos />} />

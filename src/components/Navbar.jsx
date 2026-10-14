@@ -7,7 +7,7 @@ export default function Navbar() {
         <NavLink to="/" end>
           Início
         </NavLink>
-        <NavLink to="/sobre">Sobre</NavLink>
+        {/* <NavLink to="/sobre">Sobre</NavLink> */}
         <NavLink to="/busca">Busca</NavLink>
         <NavLink to="/favoritos">Favoritos</NavLink>
       </nav>
