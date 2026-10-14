@@ -2,7 +2,22 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function MovieCard({ id, poster, titulo, nota }) {
-  const [favorito, setFavorito] = useState(false);
+  const [favoritos, setFavoritos] = useState(
+    JSON.parse(localStorage.getItem("favoritos")) || [],
+  );
+  const favorito = favoritos.some((filme) => filme.id === id);
+
+  function alternarFavorito() {
+    if (favorito) {
+      const novaLista = favoritos.filter((filme) => filme.id !== id);
+      setFavoritos(novaLista);
+      localStorage.setItem("favoritos", JSON.stringify(novaLista));
+    } else {
+      const novaLista = [...favoritos, { id, poster, titulo, nota }];
+      setFavoritos(novaLista);
+      localStorage.setItem("favoritos", JSON.stringify(novaLista));
+    }
+  }
 
   return (
     <div>
@@ -15,7 +30,7 @@ function MovieCard({ id, poster, titulo, nota }) {
         <h2>{titulo}</h2>
       </Link>
       <p>Nota: {nota}</p>
-      <button onClick={() => setFavorito(!favorito)}>
+      <button onClick={alternarFavorito}>
         {favorito ? "Desfavoritar" : "Favoritar"}
       </button>
     </div>
