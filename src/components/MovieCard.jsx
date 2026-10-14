@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function MovieCard({ id, poster, titulo, nota }) {
+function MovieCard({ id, poster, titulo, nota, aoAlterarFavorito }) {
   const [favoritos, setFavoritos] = useState(
     JSON.parse(localStorage.getItem("favoritos")) || [],
   );
@@ -12,6 +12,7 @@ function MovieCard({ id, poster, titulo, nota }) {
       const novaLista = favoritos.filter((filme) => filme.id !== id);
       setFavoritos(novaLista);
       localStorage.setItem("favoritos", JSON.stringify(novaLista));
+      aoAlterarFavorito?.(id);
     } else {
       const novaLista = [...favoritos, { id, poster, titulo, nota }];
       setFavoritos(novaLista);

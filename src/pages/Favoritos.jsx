@@ -9,6 +9,10 @@ export default function Favoritos() {
     setFavoritos(filmesSalvos);
   }, []);
 
+  function removerFavorito(id) {
+    setFavoritos(favoritos.filter((filme) => filme.id !== id));
+  }
+
   return (
     <div>
       <h1>Favoritos</h1>
@@ -20,6 +24,7 @@ export default function Favoritos() {
           poster={filme.poster}
           titulo={filme.titulo}
           nota={filme.nota}
+          aoAlterarFavorito={removerFavorito}
         />
       ))}
     </div>
