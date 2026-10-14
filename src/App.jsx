@@ -1,5 +1,6 @@
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
 
 import Home from "./pages/Home";
 import Detalhes from "./pages/Detalhes";
@@ -11,12 +12,13 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Layout />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/sobre" element={<Detalhes />} />
-        <Route path="/busca" element={<Busca />} />
-        <Route path="/favoritos" element={<Favoritos />} />
-        <Route path="*" element={<NaoEncontrada />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/sobre" element={<Detalhes />} />
+          <Route path="/busca" element={<Busca />} />
+          <Route path="/favoritos" element={<Favoritos />} />
+          <Route path="*" element={<NaoEncontrada />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
