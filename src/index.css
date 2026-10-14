@@ -36,6 +36,11 @@ body,
   text-decoration: none;
 }
 
+.navbar nav a.active {
+  color: #60a5fa;
+  font-weight: 700;
+}
+
 .main-content {
   flex: 1;
   padding: 32px 40px;
