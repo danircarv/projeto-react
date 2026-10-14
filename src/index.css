@@ -46,6 +46,50 @@ body,
   padding: 32px 40px;
 }
 
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.movie-card {
+  overflow: hidden;
+  border-radius: 8px;
+  background: #f3f4f6;
+}
+
+.movie-card img,
+.movie-card__placeholder {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.movie-card__placeholder {
+  display: grid;
+  place-items: center;
+  color: #4b5563;
+  background: #d1d5db;
+}
+
+.movie-card h2,
+.movie-card p {
+  padding: 0 12px;
+}
+
+.movie-card h2 {
+  margin-top: 12px;
+  font-size: 1rem;
+}
+
+.movie-card p {
+  padding-bottom: 12px;
+  margin-top: 4px;
+  color: #4b5563;
+}
+
 .footer {
   padding: 20px;
   background: #111827;
