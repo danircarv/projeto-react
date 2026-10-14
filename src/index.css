@@ -46,6 +46,14 @@ body,
   padding: 32px 40px;
 }
 
+.detalhes p {
+  margin-top: 16px;
+}
+
+.detalhes .generos {
+  font-weight: 600;
+}
+
 .movie-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));

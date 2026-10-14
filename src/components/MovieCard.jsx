@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+// usei a documentação pra trazer essa imagem como diz aqui https://developer.themoviedb.org/docs/image-basics
 function MovieCard({ id, poster, titulo, nota }) {
   return (
     <div>
