@@ -20,7 +20,9 @@ export default function Detalhes() {
 
   return (
     <div className="detalhes">
-      <button onClick={() => navigate(-1)}>Voltar</button>
+      <button className="botao-voltar" onClick={() => navigate(-1)}>
+        Voltar
+      </button>
       <h1>{filme.title}</h1>
       <p className="generos">
         Gêneros: {filme.genres.map((genero) => genero.name).join(", ")}
