@@ -42,6 +42,7 @@ function Home() {
       {filmes.map((filme) => (
         <MovieCard
           key={filme.id}
+          id={filme.id}
           poster={filme.poster_path}
           titulo={filme.title}
           nota={filme.vote_average}
