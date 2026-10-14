@@ -5,17 +5,21 @@ export default function Detalhes() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [filme, setFilme] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/movie/${id}?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=pt-BR`,
     )
       .then((resposta) => resposta.json())
-      .then((dados) => setFilme(dados));
+      .then((dados) => {
+        setFilme(dados);
+        setLoading(false);
+      });
   }, [id]);
 
-  if (!filme) {
-    return <h1>Carregando...</h1>;
+  if (loading) {
+    return <p>Carregando detalhes...</p>;
   }
 
   return (
