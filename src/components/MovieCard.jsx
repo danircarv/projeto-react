@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-// usei a documentação pra trazer essa imagem como diz aqui https://developer.themoviedb.org/docs/image-basics
+
 function MovieCard({ id, poster, titulo, nota }) {
+  const [favorito, setFavorito] = useState(false);
+
   return (
     <div>
       <Link to={`/filme/${id}`}>
@@ -12,6 +15,9 @@ function MovieCard({ id, poster, titulo, nota }) {
         <h2>{titulo}</h2>
       </Link>
       <p>Nota: {nota}</p>
+      <button onClick={() => setFavorito(!favorito)}>
+        {favorito ? "Desfavoritar" : "Favoritar"}
+      </button>
     </div>
   );
 }
