@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import MovieCard from "../components/MovieCard";
 
 function Home() {
   const [filmes, setFilmes] = useState([]);
@@ -39,9 +40,12 @@ function Home() {
       <h1>Filmes populares</h1>
 
       {filmes.map((filme) => (
-        <div key={filme.id}>
-          <h2>{filme.title}</h2>
-        </div>
+        <MovieCard
+          key={filme.id}
+          poster={filme.poster_path}
+          titulo={filme.title}
+          nota={filme.vote_average}
+        />
       ))}
     </div>
   );
